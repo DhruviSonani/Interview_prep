@@ -1,5 +1,6 @@
 def lengthOfLIS(nums):
     # Tc - O(n^log(n))
+    # we will find very next elemetn of current element to add in list
     if not nums:
         return 0
     dp = [nums[0]]
@@ -12,6 +13,7 @@ def lengthOfLIS(nums):
                 left = mid + 1
             else:
                 right = mid
+        print(left, right, dp)
         if dp[left] < nums[i]:
             dp.append(nums[i])
             len_dp += 1
@@ -21,5 +23,16 @@ def lengthOfLIS(nums):
     return len_dp
 
 
-nums = [4, 10, 4, 3, 8, 9]
+#     0 0 [10]
+# 0 0 [9]
+# 0 0 [2]
+# 1 1 [2, 5]
+# 1 1 [2, 3]
+# 2 2 [2, 3, 7]
+# 3 3 [2, 3, 7, 101]
+# [2, 3, 7, 18]
+# 4
+
+
+nums = [10, 9, 2, 5, 3, 7, 101, 18]
 print(lengthOfLIS(nums))

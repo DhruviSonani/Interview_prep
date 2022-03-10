@@ -21,6 +21,6 @@ def countStation(arr, dept):
     return needed
 
 
-arr = [900, 905, 1200, 950, 1100, 1500]
-dept = [910, 1200, 1300, 1120, 1130, 1900]
+arr = [5, 0, 25, 35]
+dept = [10, 20, 40, 45]
 print(countStation(arr, dept))

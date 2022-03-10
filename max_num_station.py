@@ -1,5 +1,5 @@
 # Walmart question https://www.geeksforgeeks.org/minimum-number-platforms-required-railwaybus-station/
-
+# o(nlogn)
 def countStation(arr, dept):
     arr.sort()
     dept.sort()

@@ -1,14 +1,15 @@
 # question asked in interview of SDE 3 intern @Walmart.
-# Given a dictionary of source and destination, return source and destination in list
+# Given a dictionary of start and destination, return start and destination in list. No starting point is defined
 # Solved with DFS
 
 adj_list = {
-    "IND": ["PAK", "RUS"],
     "PAK": ["USA"],
+    "IND": ["PAK", "RUS"],
     "USA": ["CHINA"],
     "SRI": ["RUS"],
     "Elite": []
 }
+
 color = {}  # mark each node white - "W", Mark Gray while visiting - "G", Black when traversed completely - "B"
 parent = {}  # Give parent to each node so that we get idea from which parent we reached this node
 dfs_traversal_output = []  # input of source and destination
@@ -34,7 +35,6 @@ def dfsUtils(source, u):
                 parent[v] = u
                 dfsUtils(source, v)
         color[u] = "B"
-
         time += 1
 
 
